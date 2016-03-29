@@ -1,0 +1,4 @@
+blau(market): 1aa2db
+rosa(push):   ff5a51
+gris(fosc):   424242
+gris(clar):   757575
