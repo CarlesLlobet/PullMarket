@@ -1,3 +1,77 @@
 <resources>
-    <string name="app_name">PullMarket</string>
+    <string name="app_name" translatable="false">PushMarket</string>
+
+    <!-- Titulos -->
+
+    <string name="tituloAyuda">Ayuda</string>
+    <string name="tituloLogin">Iniciar Sesión</string>
+    <string name="tituloPassword">Cambiar contraseña</string>
+    <string name="tituloRegister">Añadir usuario</string>
+    <string name="tituloHome">Inicio</string>
+    <string name="tituloSettings">Ajustes</string>
+    <string name="account">Cuenta</string>
+    <string name="progress">Procesando...</string>
+    <string name="welcome">Bienvenido a</string>
+
+    <!-- Error Messages -->
+
+    <string name="error1">"La contraseña actual no es correcta!"</string>
+    <string name="error2">"Las contraseñas no coinciden!"</string>
+    <string name="error3">"Datos incorrectos. Prueba con otro correo"</string>
+
+    <!-- Login Fields -->
+    <string name="name">"Nombre:"</string>
+    <string name="email">Correo electronico:</string>
+    <string name="passwd">"Contraseña:"</string>
+    <string name="error" translatable="false">"Error"</string>
+    <string name="loginFail">"El usuario o contraseña introducidos no son correctos"</string>
+
+
+    <!-- ChangeUser Fields -->
+    <string name="oldPasswd">"Contraseña actual:"</string>
+    <string name="newPasswd">"Nueva contraseña:"</string>
+    <string name="newPasswd2">"Repita la nueva contraseña:"</string>
+
+    <!-- ProductsFragment Fields -->
+    <string name="deleteUser">"Eliminar"</string>
+    <string name="deleteUserText">"Seguro que quieres eliminar el usuario: "</string>
+
+    <!-- Buttons -->
+    <string name="btnEnter">Entrar</string>
+    <string name="btnChange">Cambiar</string>
+    <string name="btnAddUser">Añadir usuario</string>
+    <string name="btnChangePasswd">Cambiar contraseña</string>
+    <string name="btnRegister">   Registrarse</string>
+    <string name="btnLogout">   Cerrar sesión</string>
+    <string name="btnRetry">   Reintentar</string>
+
+    <!-- Otros -->
+    <string name="action_settings">Ajustes</string>
+    <string name="openDrawer">Open Drawer</string>
+    <string name="closeDrawer">Cerrar menu</string>
+    <string name="helpMenu">Para añadir un elemento a tu lista de la compra, pasa un tag NFC o pulsa el boton</string>
+    <string name="helpSettings">
+        En ajustes puedes ver toda tu información personal para verificarla.\n
+        En caso de error o cambio en algun dato, habla con el administrador para modificarlo.\n\n
+
+        El boton de <b>Cerrar sesión</b> te permitira cerrar la sesión para que nadie pueda acceder a tu cuenta ni información personal.
+    </string>
+    <string name="btnClose">Cerrar</string>
+    <string name="spa">Español</string>
+    <string name="cat">Catalan</string>
+    <string name="en">Inglés</string>
+    <string name="checkBoxText">No volver a mostrar</string>
+    <string name="notifRegister">Usuario añadido correctamente!</string>
+    <string name="notifPass">Contraseña cambiada correctamente!</string>
+    <string name="tituloProducts">Productos</string>
+    <string name="lastName">Apellidos:</string>
+    <string name="edad">Edad:</string>
+    <string name="sexo">Sexo:</string>
+    <string name="pais">Pais:</string>
+    <string name="ciudad">Ciudad:</string>
+    <string name="btnNo" translatable="false">No</string>
+    <string name="btnSi">Si</string>
+    <string name="dialog1">Nueva foto de perfil</string>
+    <string name="male">Masculino</string>
+    <string name="female">Femenino</string>
 </resources>

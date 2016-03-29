@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="account">Compte</string>
+    <string name="action_settings">Preferències</string>
+    <string name="btnAddUser">Afegir usuari</string>
+    <string name="btnChange">Canviar</string>
+    <string name="btnChangePasswd">Canviar contrasenya</string>
+    <string name="btnEnter">Entrar</string>
+    <string name="btnLogout">Tancar sessió</string>
+    <string name="btnRegister">Afegir </string>
+    <string name="btnRetry">Reintentar</string>
+    <string name="btnSi">Si</string>
+    <string name="closeDrawer">Tancar menú</string>
+    <string name="deleteUser">Eliminar</string>
+    <string name="deleteUserText">Segur que vols eliminar l\'usuari: </string>
+    <string name="dialog1">Nova foto de perfil</string>
+    <string name="error1">La contrasenya actual no es correcta!</string>
+    <string name="error2">Les contrasenyes no coincideixen!</string>
+    <string name="helpMenu">"Per a afegir un element a la teva llista de la compra, passa un tag NFC o clica el botó"</string>
+    <string name="helpSettings">
+        "A les preferències podem veure la nostra informació personal per verificar-la."\n
+        "En cas d'error o canvi d'alguna dada, parla amb l'administrador per modificar-ho."\n\n
+
+        El botó de <b>Tancar sessió</b> et permetrà tancar la sessió per a que ningú pugui accedir al teu compte ni informació personal.
+    </string>
+    <string name="name">Nom:</string>
+    <string name="newPasswd">Nova contrasenya:</string>
+    <string name="newPasswd2">Repeteix la nova contrasenya:</string>
+    <string name="oldPasswd">Contrasenya actual</string>
+    <string name="openDrawer">Open Drawer</string>
+    <string name="passwd">Contrasenya:</string>
+    <string name="progress">Processant...</string>
+    <string name="tituloAyuda">Ajuda</string>
+    <string name="tituloHome">Inici</string>
+    <string name="tituloLogin">Iniciar Sessió</string>
+    <string name="tituloPassword">Canviar contrasenya</string>
+    <string name="tituloRegister">Afegir usuari</string>
+    <string name="tituloSettings">Preferències</string>
+    <string name="email">Correu electrònic:</string>
+    <string name="welcome">Benvingut a</string>
+    <string name="btnClose">Tancar</string>
+    <string name="spa">Castellà</string>
+    <string name="cat">Català</string>
+    <string name="en">Anglès</string>
+    <string name="checkBoxText">No tornar a mostrar</string>
+    <string name="notifRegister">Usuari afegit correctament!</string>
+    <string name="notifPass">Contrasenya canviada correctament!</string>
+    <string name="tituloProducts">Productes</string>
+    <string name="lastName">Cognoms:</string>
+    <string name="loginFail">L\'usuari o contrasenya introduits no són correctes</string>
+    <string name="ciudad">Ciutat:</string>
+    <string name="pais">País:</string>
+    <string name="sexo">Sexe:</string>
+    <string name="edad">Edat:</string>
+    <string name="male">Masculí</string>
+    <string name="female">Femení</string>
+    <string name="error3">Dades incorrectes. Prova amb un altre correu</string>
+</resources>

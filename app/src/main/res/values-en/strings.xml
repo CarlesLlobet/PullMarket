@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="account">Account</string>
+    <string name="action_settings">Settings</string>
+    <string name="btnAddUser">Add user</string>
+    <string name="btnChange">Change</string>
+    <string name="btnChangePasswd">Change password</string>
+    <string name="btnEnter">Enter</string>
+    <string name="btnLogout">Logout</string>
+    <string name="btnRegister">Add</string>
+    <string name="btnRetry">Retry</string>
+    <string name="btnSi">Yes</string>
+    <string name="closeDrawer">Close menu</string>
+    <string name="deleteUser">Delete</string>
+    <string name="deleteUserText">Are you sure deleting the user:</string>
+    <string name="dialog1">New profile picture</string>
+    <string name="error1">The current password is not correct!</string>
+    <string name="error2">Passwords do not match!</string>
+    <string name="helpMenu">"To add a product to your list, put the device on a NFC tag or click the button"</string>
+    <string name="helpSettings">
+        "In settings we'll be able to see all our personal information and verify it."\n
+        "In case of mistake or some old data, talk with the administrator to modify it."\n\n
+
+        The <b>Logout</b> button will allow you to logout so anybody can access your account or your personal information.
+    </string>
+    <string name="newPasswd">New password:</string>
+    <string name="newPasswd2">Repeat the new password</string>
+    <string name="oldPasswd">Current password</string>
+    <string name="openDrawer">Open Drawer</string>
+    <string name="passwd">Password:</string>
+    <string name="progress">Processing...</string>
+    <string name="tituloAyuda">Help</string>
+    <string name="tituloHome">Home</string>
+    <string name="tituloLogin">Log In</string>
+    <string name="tituloPassword">Change password</string>
+    <string name="tituloRegister">Add user</string>
+    <string name="tituloSettings">Settings</string>
+    <string name="email">Email:</string>
+    <string name="welcome">Welcome to</string>
+    <string name="btnClose">Close</string>
+    <string name="spa">Spanish</string>
+    <string name="en">English</string>
+    <string name="cat">Catalan</string>
+    <string name="checkBoxText">Don\'t show anymore</string>
+    <string name="notifRegister">User correctly registered!</string>
+    <string name="notifPass">Password correctly changed!</string>
+    <string name="tituloProducts">Products</string>
+    <string name="lastName">Last name:</string>
+    <string name="loginFail">User or password introduced are not correct</string>
+    <string name="ciudad">City:</string>
+    <string name="pais">Country:</string>
+    <string name="sexo">Sex:</string>
+    <string name="edad">Age:</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="error3">Incorrect data. Try with another email</string>
+    <string name="name">Name:</string>
+</resources>

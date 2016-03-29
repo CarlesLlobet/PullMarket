@@ -1,0 +1,35 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".MainActivity">
+
+    <item
+        android:id="@+id/action_language"
+        android:icon="@mipmap/spain"
+        android:orderInCategory="100"
+        android:title="Language"
+        app:showAsAction="ifRoom">
+        <menu>
+            <item
+                android:id="@+id/action_spa"
+                android:icon="@mipmap/spain"
+                android:enabled="true"
+                android:title="@string/spa"></item>
+            <item
+                android:id="@+id/action_cat"
+                android:icon="@mipmap/catalonia"
+                android:title="@string/cat"></item>
+            <item
+                android:id="@+id/action_en"
+                android:icon="@mipmap/uk"
+                android:title="@string/en"></item>
+        </menu>
+    </item>
+
+    <item
+        android:id="@+id/action_help"
+        android:icon="@drawable/ic_help_white_24dp"
+        android:orderInCategory="100"
+        android:title="Ayuda"
+        app:showAsAction="ifRoom" />
+</menu>
