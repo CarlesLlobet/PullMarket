@@ -9,7 +9,7 @@ import android.net.Uri;
 
 import java.util.ArrayList;
 
-import xyz.carlesllobet.pushmarket.Domain.Product;
+import xyz.carlesllobet.pullmarket.Domain.Product;
 
 public class DatabaseHandler extends SQLiteOpenHelper {
  

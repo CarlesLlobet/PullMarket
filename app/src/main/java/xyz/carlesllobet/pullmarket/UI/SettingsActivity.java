@@ -3,6 +3,7 @@ package xyz.carlesllobet.pullmarket.UI;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -12,13 +13,13 @@ import android.widget.TextView;
 
 import java.util.Locale;
 
-import xyz.carlesllobet.pushmarket.DB.UserFunctions;
-import xyz.carlesllobet.pushmarket.R;
+import xyz.carlesllobet.pullmarket.DB.UserFunctions;
+import xyz.carlesllobet.pullmarket.R;
 
 /**
  * Created by JEDI on 17/08/2015.
  */
-public class SettingsActivity extends BaseActivity implements View.OnClickListener {
+public class SettingsActivity extends AppCompatActivity implements View.OnClickListener {
     private Button btnChangePassword;
     private Button btnLogout;
 
@@ -184,7 +185,6 @@ public class SettingsActivity extends BaseActivity implements View.OnClickListen
     @Override
     protected void onResume() {
         super.onResume();
-        checkMenuItem(2);
     }
 
     @Override

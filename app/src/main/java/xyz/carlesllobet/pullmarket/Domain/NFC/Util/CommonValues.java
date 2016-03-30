@@ -2,8 +2,8 @@ package xyz.carlesllobet.pullmarket.Domain.NFC.Util;
 
 import java.util.ArrayList;
 
-import xyz.carlesllobet.pushmarket.Domain.NFC.Entity.MifareClassic1k;
-import xyz.carlesllobet.pushmarket.Domain.NFC.Entity.MifareUltraLightC;
+import xyz.carlesllobet.pullmarket.Domain.NFC.Entity.MifareUltraLightC;
+import xyz.carlesllobet.pullmarket.Domain.NFC.Entity.MifareClassic1k;
 
 public class CommonValues {
 	public static CommonValues commonValues;

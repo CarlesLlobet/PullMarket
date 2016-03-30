@@ -2,6 +2,7 @@ package xyz.carlesllobet.pullmarket.UI;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -10,13 +11,13 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import xyz.carlesllobet.pushmarket.DB.UserFunctions;
-import xyz.carlesllobet.pushmarket.R;
+import xyz.carlesllobet.pullmarket.DB.UserFunctions;
+import xyz.carlesllobet.pullmarket.R;
 
 /**
  * Created by CarlesLlobet on 10/03/2016.
  */
-public class PasswordActivity extends xyz.carlesllobet.pushmarket.UI.BaseActivity implements View.OnClickListener {
+public class PasswordActivity extends AppCompatActivity implements View.OnClickListener {
     private Button btnChange;
 
     private EditText oldPass;

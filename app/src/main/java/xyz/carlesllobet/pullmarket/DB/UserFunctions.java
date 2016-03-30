@@ -12,7 +12,7 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
-import xyz.carlesllobet.pushmarket.Domain.Product;
+import xyz.carlesllobet.pullmarket.Domain.Product;
 
 public class UserFunctions {
 

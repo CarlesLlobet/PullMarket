@@ -4,10 +4,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
-import xyz.carlesllobet.pushmarket.DB.DatabaseHandler;
-import xyz.carlesllobet.pushmarket.DB.UserFunctions;
-import xyz.carlesllobet.pushmarket.UI.GifActivity;
-import xyz.carlesllobet.pushmarket.UI.LoginActivity;
+import xyz.carlesllobet.pullmarket.DB.DatabaseHandler;
+import xyz.carlesllobet.pullmarket.DB.UserFunctions;
+import xyz.carlesllobet.pullmarket.UI.GifActivity;
+import xyz.carlesllobet.pullmarket.UI.LoginActivity;
 
 public class Main extends AppCompatActivity {
 

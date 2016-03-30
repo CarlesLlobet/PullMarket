@@ -31,7 +31,7 @@
                 android:layout_height="100dp"
                 android:id="@+id/imageView"
                 android:layout_marginBottom="50dp"
-                android:src="@drawable/pushmarket"
+                android:src="@drawable/pullmarket"
                 android:padding="10dp"
                 android:layout_marginTop="30dp"
                 android:layout_gravity="center_horizontal" />
@@ -87,15 +87,6 @@
                 android:textAllCaps="false"
                 android:id="@+id/btnLogin"
                 android:layout_marginTop="25dp"
-                android:layout_centerHorizontal="true"
-                android:layout_gravity="center_horizontal" />
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/btnRegister"
-                android:textAllCaps="false"
-                android:id="@+id/btnRegister"
-                android:layout_marginTop="5dp"
                 android:layout_centerHorizontal="true"
                 android:layout_gravity="center_horizontal" />
         </LinearLayout>

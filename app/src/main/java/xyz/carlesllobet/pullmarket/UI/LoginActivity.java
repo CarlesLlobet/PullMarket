@@ -17,13 +17,12 @@ import android.widget.EditText;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import xyz.carlesllobet.pushmarket.DB.UserFunctions;
-import xyz.carlesllobet.pushmarket.R;
+import xyz.carlesllobet.pullmarket.DB.UserFunctions;
+import xyz.carlesllobet.pullmarket.R;
 
 public class LoginActivity extends AppCompatActivity {
 
     private Button btnLogin;
-    private Button btnRegister;
     private EditText inputEmail;
     private EditText inputPassword;
 
@@ -56,7 +55,6 @@ public class LoginActivity extends AppCompatActivity {
         inputEmail = (EditText) findViewById(R.id.loginEmail);
         inputPassword = (EditText) findViewById(R.id.loginPassword);
         btnLogin = (Button) findViewById(R.id.btnLogin);
-        btnRegister = (Button) findViewById(R.id.btnRegister);
 
         toolbar = (Toolbar) findViewById(R.id.tool_bar); // Attaching the layout to the toolbar object
         setSupportActionBar(toolbar);
@@ -102,14 +100,6 @@ public class LoginActivity extends AppCompatActivity {
                         UserLoginTask AsyncLogin = new UserLoginTask();
                         AsyncLogin.execute(email, password);
                     }
-                }
-            }
-        });
-        btnRegister.setOnClickListener(new View.OnClickListener() {
-
-            public void onClick(View view) {
-                if (clickable) {
-                    startActivity(new Intent(getApplicationContext(), RegisterActivity.class));
                 }
             }
         });

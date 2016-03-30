@@ -5,8 +5,8 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 
-import xyz.carlesllobet.pushmarket.Domain.PlayGifView;
-import xyz.carlesllobet.pushmarket.R;
+import xyz.carlesllobet.pullmarket.Domain.PlayGifView;
+import xyz.carlesllobet.pullmarket.R;
 
 /**
  * Created by CarlesLlobet on 10/03/2016.
@@ -20,7 +20,7 @@ public class GifActivity extends AppCompatActivity {
         setContentView(R.layout.activity_gif);
 
         PlayGifView pGif = (PlayGifView) findViewById(R.id.viewGif);
-        pGif.setImageResource(R.drawable.pushmarket_gif);
+        pGif.setImageResource(R.drawable.pullmarket_gif);
 
         Handler handler = new Handler();
         handler.postDelayed(new Runnable() {

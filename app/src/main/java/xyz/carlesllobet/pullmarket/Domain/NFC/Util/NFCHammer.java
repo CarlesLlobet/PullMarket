@@ -8,8 +8,8 @@ import android.util.Log;
 
 import java.io.IOException;
 
-import xyz.carlesllobet.pushmarket.Domain.NFC.Entity.MifareClassic1k;
-import xyz.carlesllobet.pushmarket.Domain.NFC.Entity.MifareUltraLightC;
+import xyz.carlesllobet.pullmarket.Domain.NFC.Entity.MifareClassic1k;
+import xyz.carlesllobet.pullmarket.Domain.NFC.Entity.MifareUltraLightC;
 
 public class NFCHammer {
 	
