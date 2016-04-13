@@ -322,7 +322,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
                         list.addProduct(nou);
                     }
                 }
-                startActivity(new Intent(getApplicationContext(), HomeActivity.class));
+                recreate();
             }
         }
     }
