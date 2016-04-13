@@ -16,7 +16,7 @@
     <string name="dialog1">Nova foto de perfil</string>
     <string name="error1">La contrasenya actual no es correcta!</string>
     <string name="error2">Les contrasenyes no coincideixen!</string>
-    <string name="helpMenu">"Per a afegir un element a la teva llista de la compra, passa un tag NFC o clica el botó"</string>
+    <string name="helpMenu">"Per afegir una compra passa un tag NFC"</string>
     <string name="helpSettings">
         "A les preferències podem veure la nostra informació personal per verificar-la."\n
         "En cas d'error o canvi d'alguna dada, parla amb l'administrador per modificar-ho."\n\n

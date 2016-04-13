@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name" translatable="false">PushMarket</string>
+    <string name="app_name" translatable="false">PullMarket</string>
 
     <!-- Titulos -->
 
@@ -49,7 +49,7 @@
     <string name="action_settings">Ajustes</string>
     <string name="openDrawer">Open Drawer</string>
     <string name="closeDrawer">Cerrar menu</string>
-    <string name="helpMenu">Para añadir un elemento a tu lista de la compra, pasa un tag NFC o pulsa el boton</string>
+    <string name="helpMenu">Para añadir una compra pasa un tag NFC</string>
     <string name="helpSettings">
         En ajustes puedes ver toda tu información personal para verificarla.\n
         En caso de error o cambio en algun dato, habla con el administrador para modificarlo.\n\n

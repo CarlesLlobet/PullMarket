@@ -44,7 +44,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
                 + KEY_DESCRIPTION + " TEXT NOT NULL,"
                 + KEY_FOTO + " STRING,"
                 + KEY_SECTOR + " INTEGER,"
-                + KEY_PREU + " INTEGER"+ ")";
+                + KEY_PREU + " REAL"+ ")";
         db.execSQL(CREATE_PROD_TABLE);
     }
  
@@ -61,7 +61,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     /**
      * Storing user details in database
      * */
-    public boolean addProduct(Integer id, String nombre, String description, Integer sector, Integer preu, Uri pic) {
+    public boolean addProduct(Long id, String nombre, String description, Integer sector, Double preu, Uri pic) {
     	SQLiteDatabase db = this.getWritableDatabase();
 
         //Si existeix, retorna fals, i no es pot afegir
@@ -97,21 +97,19 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.rawQuery(selectQuery, null);
         // Move to first row
-        cursor.moveToFirst();
-        Integer i = 0;
-        while(cursor.getCount() > 0){
-            Product aux = new Product(cursor.getInt(0),cursor.getString(1),cursor.getString(2),Uri.parse(cursor.getString(3)),
-                    cursor.getInt(4),cursor.getInt(5));
-            products.add(i, aux);
-            ++i;
+        if (cursor.moveToFirst()) {
+            do {
+                Product aux = new Product(cursor.getLong(0),cursor.getString(1),cursor.getString(2),Uri.parse(cursor.getString(3)),
+                        cursor.getInt(4),cursor.getDouble(5));
+                products.add(aux);
+            } while (cursor.moveToNext());
         }
-        cursor.close();
         db.close();
         // return user
         return products;
     }
 
-    public Boolean CheckProductExist(Integer id) {
+    public Boolean CheckProductExist(Long id) {
         SQLiteDatabase db = this.getReadableDatabase();
         String selectQuery="SELECT * FROM " + TABLE_PRODUCTS + " WHERE " + KEY_ID + " = " + id;
         Cursor c = db.rawQuery(selectQuery, null);
@@ -131,6 +129,19 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         }
         db.close();
         return "";
+    }
+
+    public Product getProduct (Long id) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        String selectQuery="SELECT * FROM " + TABLE_PRODUCTS + " WHERE " + KEY_ID + " = " + id;
+        Cursor c = db.rawQuery(selectQuery, null);
+        Product p = null;
+        if (c.moveToFirst()) {
+            db.close();
+            p = new Product(c.getLong(0),c.getString(1),c.getString(2),Uri.parse(c.getString(3)),c.getInt(4),c.getDouble(5));
+        }
+        db.close();
+        return p;
     }
 
     public Uri getFoto (Integer id) {

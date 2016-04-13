@@ -13,13 +13,18 @@ public class Main extends AppCompatActivity {
 
     private UserFunctions userFunctions;
 
+    private Llista list;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        // mirar si el usuari accedeix
+        // Crear Singletons
+        list = new Llista();
 
         userFunctions = new UserFunctions();
+        userFunctions.checkTestValues(getApplicationContext());
+
         if(userFunctions.isUserLoggedIn(getApplicationContext())){
             Intent menu = new Intent(getApplicationContext(), GifActivity.class);
             menu.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);

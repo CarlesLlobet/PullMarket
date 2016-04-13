@@ -8,11 +8,11 @@ import android.net.Uri;
 public class Product {
 
     //private variables
-    Integer id;
+    Long id;
     String name;
     String description;
     Integer sector;
-    Integer preu;
+    Double preu;
     Uri pic;
 
     // Empty constructor
@@ -21,7 +21,7 @@ public class Product {
     }
 
     // constructor
-    public Product(Integer id, String name, String description, Uri pic, Integer sector, Integer preu) {
+    public Product(Long id, String name, String description, Uri pic, Integer sector, Double preu) {
         this.id = id;
         this.name = name;
         this.description = description;
@@ -30,9 +30,9 @@ public class Product {
         this.pic = pic;
     }
 
-    public Integer getId() {return this.id;}
+    public Long getId() {return this.id;}
 
-    public void setId(Integer id) {this.id = id;}
+    public void setId(Long id) {this.id = id;}
 
     // getting name
     public String getName() {
@@ -65,12 +65,12 @@ public class Product {
     }
 
     // getting punctuation
-    public Integer getPreu() {
+    public Double getPreu() {
         return this.preu;
     }
 
     // setting punctuation
-    public void setPreu(Integer price) {
+    public void setPreu(Double price) {
         this.preu = price;
     }
 

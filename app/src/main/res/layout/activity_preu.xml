@@ -2,51 +2,45 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/list"
     android:background="@color/colorPrimaryDark"
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <!--
-    <include
-        android:id="@+id/tool_bar"
-        layout="@layout/tool_bar"></include>
-    -->
-    <ImageView
-        android:id="@+id/textView9"
-        android:layout_width="275dp"
-        android:layout_height="275dp"
-        android:src="@drawable/pullmarket"
-        android:layout_marginTop="100dp"
-        android:layout_centerHorizontal="true"/>
-
     <TextView
-        android:id="@+id/textView10"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/textView9"
+        android:layout_marginTop="100dp"
         android:layout_centerHorizontal="true"
-        android:textSize="16dp"
-        android:paddingLeft="30dp"
-        android:paddingRight="30dp"
-        android:text="@string/helpMenu"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textColor="@android:color/white" />
+        android:textColor="@android:color/white"
+        android:textSize="50dp"
+        android:text = "Preu a pagar"/>
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/mRecyclerView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_gravity="center_horizontal|top"
-        android:scrollbars="vertical" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/preu"
+        android:layout_centerInParent="true"
+        android:textColor="@android:color/white"
+        android:textSize="50dp"
+        android:text = "0.00"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_toRightOf="@id/preu"
+        android:layout_centerVertical="true"
+        android:textColor="@android:color/white"
+        android:textSize="50dp"
+        android:text = "€"/>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_margin="15dp"
         android:id="@+id/botons"
-        android:visibility="invisible"
         android:orientation="horizontal">
 
         <ImageButton
