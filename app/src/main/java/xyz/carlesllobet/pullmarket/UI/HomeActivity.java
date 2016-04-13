@@ -20,7 +20,10 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import org.w3c.dom.Text;
 
 import java.io.UnsupportedEncodingException;
 import java.util.Arrays;
@@ -39,6 +42,8 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     private UserFunctions uf;
 
     private ImageButton confirmar,cancelar;
+
+    private TextView ajuda;
 
     private LinearLayout botons;
 
@@ -73,8 +78,16 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         uf = new UserFunctions();
 
         botons = (LinearLayout) findViewById(R.id.botons);
+        ajuda = (TextView) findViewById(R.id.textView10);
 
-        botons.setVisibility(View.INVISIBLE);
+        if (Llista.getInstance().getAllProducts().isEmpty()){
+            botons.setVisibility(View.VISIBLE);
+            ajuda.setVisibility(View.INVISIBLE);
+        }
+        else{
+            botons.setVisibility(View.INVISIBLE);
+            ajuda.setVisibility(View.VISIBLE);
+        }
 
         confirmar = (ImageButton) findViewById(R.id.confirmar);
         cancelar = (ImageButton) findViewById(R.id.cancelar);
@@ -309,7 +322,6 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
                         list.addProduct(nou);
                     }
                 }
-                if (!Llista.getInstance().getAllProducts().isEmpty()) botons.setVisibility(View.VISIBLE);
                 startActivity(new Intent(getApplicationContext(), HomeActivity.class));
             }
         }
