@@ -221,18 +221,17 @@ public class UserFunctions {
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
         if (preferences.getString("TestValues","notExists").equals("notExists")) {
             //Fiquem valors inicials
-            Uri vi = Uri.parse("android.resource://xyz.carlesllobet.pushmarket/" + R.drawable.vi);
-            Uri tabac = Uri.parse("android.resource://xyz.carlesllobet.pushmarket/" + R.drawable.tabac);
-            Uri paper = Uri.parse("android.resource://xyz.carlesllobet.pushmarket/" + R.drawable.paper);
-            Uri diari = Uri.parse("android.resource://xyz.carlesllobet.pushmarket/" + R.drawable.diari);
-            Uri letibalm = Uri.parse("android.resource://xyz.carlesllobet.pushmarket/" + R.drawable.letibalm);
+            Uri llet = Uri.parse("android.resource://xyz.carlesllobet.pushmarket/" + R.drawable.llet);
+            Uri xampu = Uri.parse("android.resource://xyz.carlesllobet.pushmarket/" + R.drawable.xampu);
+            Uri dentifric = Uri.parse("android.resource://xyz.carlesllobet.pushmarket/" + R.drawable.dentifric);
+            Uri patates = Uri.parse("android.resource://xyz.carlesllobet.pushmarket/" + R.drawable.patates);
             Uri cafe = Uri.parse("android.resource://xyz.carlesllobet.pushmarket/" + R.drawable.cafe);
-            addProduct(context,5411786006905L, "Flandria Original", "Fumar Mata", 3.35, 2, tabac);
-            addProduct(context, 8413831003300L, "Xènius Penedès", "12.5% vol, 75cl", 8.90, 32, vi);
-            addProduct(context, 3057067222903L, "Papel de Liar OCB", "300 unidades", 2.25, 2, paper);
-            addProduct(context,8435173009116L, "Cápsulas café", "Capsulas ecologicas", 4.99, 33, cafe);
-            addProduct(context,8427626000900L, "El Mundo", "Noticias de deportes", 1.10, 1, diari);
-            addProduct(context,84196866L, "Letibalm", "Crema labial", 4.30, 5, letibalm);
+            addProduct(context,5411786006905L, "Llet Puleva", "Sense lactosa", 1.14, 2, llet);
+            addProduct(context, 8413831003300L, "Xampú H&S", "Anticaspa", 5.99, 32, xampu);
+            addProduct(context, 3057067222903L, "Cafè Marcilla", "Barreja", 2.43, 2, cafe);
+            addProduct(context,8435173009116L, "Pasta Colgate", "Anticàries", 1.19, 33, dentifric);
+            addProduct(context,8427626000900L, "Patates Xip Lay's", "Gourmet cruixents", 2.01, 1, patates);
+
 
             //Guardem que s'han posat els valors inicials
             SharedPreferences.Editor editor = preferences.edit();
