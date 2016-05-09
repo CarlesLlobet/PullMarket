@@ -312,6 +312,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
             if (result != null) {
                 // Do something with the result here
                 UserFunctions userFunctions = new UserFunctions();
+                Log.d("rebut:",result);
                 String[] productes = result.split(",");
                 for (int i = 0; i < productes.length; ++i) {
                     Product nou = userFunctions.getProduct(getApplicationContext(), Long.valueOf(productes[i]));

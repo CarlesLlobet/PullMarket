@@ -221,11 +221,11 @@ public class UserFunctions {
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
         if (preferences.getString("TestValues","notExists").equals("notExists")) {
             //Fiquem valors inicials
-            Uri llet = Uri.parse("android.resource://xyz.carlesllobet.pushmarket/" + R.drawable.llet);
-            Uri xampu = Uri.parse("android.resource://xyz.carlesllobet.pushmarket/" + R.drawable.xampu);
-            Uri dentifric = Uri.parse("android.resource://xyz.carlesllobet.pushmarket/" + R.drawable.dentifric);
-            Uri patates = Uri.parse("android.resource://xyz.carlesllobet.pushmarket/" + R.drawable.patates);
-            Uri cafe = Uri.parse("android.resource://xyz.carlesllobet.pushmarket/" + R.drawable.cafe);
+            Uri llet = Uri.parse("android.resource://xyz.carlesllobet.pullmarket/" + R.mipmap.llet);
+            Uri xampu = Uri.parse("android.resource://xyz.carlesllobet.pullmarket/" + R.mipmap.xampu);
+            Uri dentifric = Uri.parse("android.resource://xyz.carlesllobet.pullmarket/" + R.mipmap.dentifric);
+            Uri patates = Uri.parse("android.resource://xyz.carlesllobet.pullmarket/" + R.mipmap.patates);
+            Uri cafe = Uri.parse("android.resource://xyz.carlesllobet.pullmarket/" + R.mipmap.cafe);
             addProduct(context,5411786006905L, "Llet Puleva", "Sense lactosa", 1.14, 2, llet);
             addProduct(context, 8413831003300L, "Xampú H&S", "Anticaspa", 5.99, 32, xampu);
             addProduct(context, 3057067222903L, "Cafè Marcilla", "Barreja", 2.43, 2, cafe);
