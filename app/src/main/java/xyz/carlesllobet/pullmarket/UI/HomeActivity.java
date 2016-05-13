@@ -12,6 +12,7 @@ import android.nfc.Tag;
 import android.nfc.tech.Ndef;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.Environment;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -25,6 +26,11 @@ import android.widget.Toast;
 
 import org.w3c.dom.Text;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.util.Arrays;
 
@@ -118,6 +124,10 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         }
 
         handleIntent(getIntent());
+        Llista list = Llista.getInstance();
+        if (list.getAllProducts()==null) {
+            llegirProductes();
+        }
     }
 
     @Override
@@ -129,6 +139,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.cancelar:
                 Llista.getInstance().borrarLlista();
                 botons.setVisibility(View.INVISIBLE);
+                borrarLlista();
                 startActivity(new Intent(getApplicationContext(), HomeActivity.class));
                 break;
         }
@@ -326,5 +337,48 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
                 recreate();
             }
         }
+    }
+
+    public void llegirProductes(){
+        File folder = new File(Environment.getExternalStorageDirectory()
+                + "/beams");
+
+        if (folder.exists()){
+            final String filename = folder.toString() + "/" + "List.csv";
+            try {
+                FileReader fr = new FileReader(filename);
+                char[] chars = null;
+                try {
+                    fr.read(chars);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                String linia = chars.toString();
+                String[] productes = linia.split(",");
+                UserFunctions userFunctions = new UserFunctions();
+                for (int i = 0; i < productes.length; ++i) {
+                    Product nou = userFunctions.getProduct(getApplicationContext(), Long.valueOf(productes[i]));
+                    if (nou == null) {
+                        userFunctions.updateAllProducts(getApplicationContext());
+                    } else {
+                        Llista list = Llista.getInstance();
+                        list.addProduct(nou);
+                    }
+                }
+                recreate();
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    public boolean borrarLlista(){
+        boolean borrada = false;
+        File list = new File(Environment.getExternalStorageDirectory()
+                + "/beams/List.csv");
+        if (list.exists()){
+            borrada = list.delete();
+        }
+        return borrada;
     }
 }
