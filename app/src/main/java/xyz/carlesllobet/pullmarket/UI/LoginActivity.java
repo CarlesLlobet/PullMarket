@@ -80,8 +80,8 @@ public class LoginActivity extends AppCompatActivity {
                         editor.putString("password", password);
                         editor.putString("name", "Admin");
                         editor.putString("lastName", "Administrator");
-                        editor.putString("edad", "21");
-                        editor.putString("sexe", "Male");
+                        editor.putString("edad", "1995-06-21");
+                        editor.putString("sexe", "Masculino");
                         editor.putString("pais", "Spain");
                         editor.putString("ciutat", "Barcelona");
                         editor.commit();

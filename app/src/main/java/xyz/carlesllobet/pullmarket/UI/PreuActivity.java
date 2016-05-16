@@ -10,6 +10,9 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.io.File;
+
+import xyz.carlesllobet.pullmarket.DB.UserFunctions;
 import xyz.carlesllobet.pullmarket.Domain.Llista;
 import xyz.carlesllobet.pullmarket.R;
 
@@ -23,6 +26,8 @@ public class PreuActivity extends AppCompatActivity implements View.OnClickListe
 
     private ProgressDialog pDialog;
 
+    private UserFunctions uf;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,6 +35,8 @@ public class PreuActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_preu);
 
         preu = (TextView) findViewById(R.id.preu);
+
+        uf = new UserFunctions();
 
         confirmar = (ImageButton) findViewById(R.id.confirmar);
         cancelar = (ImageButton) findViewById(R.id.cancelar);
@@ -51,10 +58,11 @@ public class PreuActivity extends AppCompatActivity implements View.OnClickListe
         switch (v.getId()) {
             case R.id.confirmar:
                 showProgress(true);
-                //Enviar compra a la DB
+                uf.enviarCompra(PreuActivity.this);
                 showProgress(false);
-                Toast.makeText(this, "Compra enviada", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "Compra enviada", Toast.LENGTH_SHORT).show();
                 Llista.getInstance().borrarLlista();
+                borrarLlista();
                 startActivity(new Intent(getApplicationContext(), HomeActivity.class));
                 break;
             case R.id.cancelar:
@@ -77,5 +85,14 @@ public class PreuActivity extends AppCompatActivity implements View.OnClickListe
         } else {
             pDialog.dismiss();
         }
+    }
+
+    private boolean borrarLlista(){
+        boolean borrada = false;
+        File list = new File(android.os.Environment.getExternalStorageDirectory(),File.separator+"beam"+File.separator+"List.csv");
+        if (list.exists()){
+            borrada = list.delete();
+        }
+        return borrada;
     }
 }

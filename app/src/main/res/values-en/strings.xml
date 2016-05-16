@@ -16,7 +16,7 @@
     <string name="dialog1">New profile picture</string>
     <string name="error1">The current password is not correct!</string>
     <string name="error2">Passwords do not match!</string>
-    <string name="helpMenu">"To add a sell list, put the device on a NFC tag"</string>
+    <string name="helpMenu">"To add a sell list, put the device on another NFC device"</string>
     <string name="helpSettings">
         "In settings we'll be able to see all our personal information and verify it."\n
         "In case of mistake or some old data, talk with the administrator to modify it."\n\n

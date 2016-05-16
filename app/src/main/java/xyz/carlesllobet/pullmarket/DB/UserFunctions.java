@@ -13,8 +13,10 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
+import xyz.carlesllobet.pullmarket.Domain.Llista;
 import xyz.carlesllobet.pullmarket.Domain.Product;
 import xyz.carlesllobet.pullmarket.R;
+import xyz.carlesllobet.pullmarket.UI.HomeActivity;
 
 public class UserFunctions {
 
@@ -31,6 +33,7 @@ public class UserFunctions {
     private static String register_tag = "register";
     private static String products_tag = "products";
     private static String password_tag = "password";
+    private static String compra_tag = "registerPurchase";
 
     private SharedPreferences preferences;
 
@@ -100,6 +103,12 @@ public class UserFunctions {
         return res;
     }
 
+    public String getComprador(Context context) {
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
+        String res = preferences.getString("comprador", "");
+        return res;
+    }
+
     public String getPassword(Context context) {
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
         String res = preferences.getString("password", "");
@@ -141,6 +150,12 @@ public class UserFunctions {
         SharedPreferences.Editor editor = preferences.edit();
         editor.putString("language", lang);
         Log.d("guardat", lang);
+    }
+
+    public void setComprador(Context context, String comp) {
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.putString("comprador", comp);
     }
 
     public void setPass (Context context, String password){
@@ -191,6 +206,34 @@ public class UserFunctions {
         DatabaseHandler db = new DatabaseHandler(context);
         db.resetTable();
         //Insert all products of the json
+    }
+
+    public JSONObject enviarCompra(Context context) {
+        // Building Parameters
+        ArrayList<Product> productes = Llista.getInstance().getAllProducts();
+        String res = productes.get(0).getId().toString();
+        Double preu = productes.get(0).getPreu();
+        for (int i = 1; i < productes.size(); ++i){
+            res += ",";
+            res += productes.get(i).getId().toString();
+            preu += productes.get(i).getPreu();
+        }
+
+        List<NameValuePair> params = new ArrayList<NameValuePair>();
+        params.add(new BasicNameValuePair("tag", compra_tag));
+        params.add(new BasicNameValuePair("usuari", getComprador(context)));
+        params.add(new BasicNameValuePair("caixer", getEmail(context)));
+        params.add(new BasicNameValuePair("productes", res));
+        params.add(new BasicNameValuePair("preu_total", preu.toString()));
+
+        Log.d("usuari:",getComprador(context));
+        Log.d("caixer:",getEmail(context));
+        Log.d("preu_total:",preu.toString());
+        Log.d("productes:",res);
+
+        JSONObject json = jsonParser.getJSONFromUrl(webserviceURL, params);
+
+        return json;
     }
 
     public ArrayList<Product> getAllProducts(Context context) {
