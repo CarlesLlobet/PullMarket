@@ -280,7 +280,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
                     }
                         String[] productes = (sb.toString()).split(",");
                         UserFunctions userFunctions = new UserFunctions();
-                        userFunctions.setComprador(HomeActivity.this, productes[0]);
+                        userFunctions.setComprador(getApplicationContext(), productes[0]);
                         for (int i = 1; i < productes.length; ++i) {
                             Product nou = userFunctions.getProduct(getApplicationContext(), Long.valueOf(productes[i]));
                             if (nou == null) {

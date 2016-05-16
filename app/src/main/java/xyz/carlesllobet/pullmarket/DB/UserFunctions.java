@@ -56,26 +56,6 @@ public class UserFunctions {
         return json;
     }
 
-    public JSONObject registerUser(String email, String nombre, String cognoms, String edad, String password,
-                                   String sexe, String pais, String ciutat) {
-        // Building Parameters
-        List<NameValuePair> params = new ArrayList<NameValuePair>();
-        params.add(new BasicNameValuePair("tag", register_tag));
-        params.add(new BasicNameValuePair("nombre", nombre));
-        params.add(new BasicNameValuePair("email", email));
-        params.add(new BasicNameValuePair("cognoms", cognoms));
-        params.add(new BasicNameValuePair("edad", edad));
-        params.add(new BasicNameValuePair("password", password));
-        params.add(new BasicNameValuePair("sexe", sexe));
-        params.add(new BasicNameValuePair("pais", pais));
-        params.add(new BasicNameValuePair("ciutat", ciutat));
-
-        // getting JSON Object
-        JSONObject json = jsonParser.getJSONFromUrl(webserviceURL, params);
-
-        return json;
-    }
-
 
 
     public String getName (Context context){
@@ -221,12 +201,12 @@ public class UserFunctions {
 
         List<NameValuePair> params = new ArrayList<NameValuePair>();
         params.add(new BasicNameValuePair("tag", compra_tag));
-        params.add(new BasicNameValuePair("usuari", getComprador(context)));
+        params.add(new BasicNameValuePair("usuari", "admin@admin.com")); //getComprador(context)
         params.add(new BasicNameValuePair("caixer", getEmail(context)));
         params.add(new BasicNameValuePair("productes", res));
         params.add(new BasicNameValuePair("preu_total", preu.toString()));
 
-        Log.d("usuari:",getComprador(context));
+        Log.d("usuari:","admin@admin.com");
         Log.d("caixer:",getEmail(context));
         Log.d("preu_total:",preu.toString());
         Log.d("productes:",res);

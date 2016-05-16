@@ -1,14 +1,20 @@
 package xyz.carlesllobet.pullmarket.UI;
 
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.File;
 
@@ -26,7 +32,8 @@ public class PreuActivity extends AppCompatActivity implements View.OnClickListe
 
     private ProgressDialog pDialog;
 
-    private UserFunctions uf;
+    private static String KEY_SUCCESS = "success";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,8 +42,6 @@ public class PreuActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_preu);
 
         preu = (TextView) findViewById(R.id.preu);
-
-        uf = new UserFunctions();
 
         confirmar = (ImageButton) findViewById(R.id.confirmar);
         cancelar = (ImageButton) findViewById(R.id.cancelar);
@@ -58,7 +63,10 @@ public class PreuActivity extends AppCompatActivity implements View.OnClickListe
         switch (v.getId()) {
             case R.id.confirmar:
                 showProgress(true);
-                uf.enviarCompra(PreuActivity.this);
+
+                EnviarCompra AsyncSend = new EnviarCompra();
+                AsyncSend.execute();
+
                 showProgress(false);
                 Toast.makeText(this, "Compra enviada", Toast.LENGTH_SHORT).show();
                 Llista.getInstance().borrarLlista();
@@ -94,5 +102,48 @@ public class PreuActivity extends AppCompatActivity implements View.OnClickListe
             borrada = list.delete();
         }
         return borrada;
+    }
+
+    public class EnviarCompra extends AsyncTask<String, Void, JSONObject> {
+        @Override
+        protected JSONObject doInBackground(String... params) {
+            UserFunctions userFunction = new UserFunctions();
+            if (params.length != 0) return null;
+
+            JSONObject json = userFunction.enviarCompra(getApplicationContext());
+
+            return json;
+
+        }
+
+        @Override
+        protected void onPostExecute(JSONObject json) {
+            //super.onPostExecute(logged);
+            //your stuff
+            //you can pass params, launch a new Intent, a Toast...
+
+            // check for login response
+            try {
+                if (json != null && json.getString(KEY_SUCCESS) != null) {
+
+
+                    JSONObject json_user = json.getJSONObject("compra");
+                } else {
+                    new AlertDialog.Builder(PreuActivity.this)
+                            .setTitle(R.string.error)
+                            .setMessage(R.string.loginFail)
+                            .setPositiveButton(R.string.btnRetry, new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int which) {
+                                    dialog.cancel();
+                                }
+                            })
+                            .setIcon(android.R.drawable.ic_dialog_alert)
+                            .show();
+                }
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+
+        }
     }
 }
