@@ -129,6 +129,7 @@ public class UserFunctions {
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
         SharedPreferences.Editor editor = preferences.edit();
         editor.putString("language", lang);
+        editor.commit();
         Log.d("guardat", lang);
     }
 
@@ -136,12 +137,14 @@ public class UserFunctions {
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
         SharedPreferences.Editor editor = preferences.edit();
         editor.putString("comprador", comp);
+        editor.commit();
     }
 
     public void setPass (Context context, String password){
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
         SharedPreferences.Editor editor = preferences.edit();
         editor.putString("password", password);
+        editor.commit();
 
         //SET PASSWORD TO WEBSERVICE DB
         List<NameValuePair> params = new ArrayList<NameValuePair>();
@@ -191,25 +194,27 @@ public class UserFunctions {
     public JSONObject enviarCompra(Context context) {
         // Building Parameters
         ArrayList<Product> productes = Llista.getInstance().getAllProducts();
+        ArrayList<Integer> cantitats = Llista.getInstance().getAllCants();
         String res = productes.get(0).getId().toString();
         Double preu = productes.get(0).getPreu();
-        for (int i = 1; i < productes.size(); ++i){
-            res += ",";
-            res += productes.get(i).getId().toString();
-            preu += productes.get(i).getPreu();
+        for (int j = 1; j < cantitats.get(0); ++j){
+            preu += productes.get(0).getPreu();
         }
+        for (int i = 1; i < productes.size(); ++i){
+            for (int j = 0; j < cantitats.get(i); ++j){
+                res += ",";
+                res += productes.get(i).getId().toString();
+                preu += productes.get(i).getPreu();
+            }
+        }
+        round(preu,2);
 
         List<NameValuePair> params = new ArrayList<NameValuePair>();
         params.add(new BasicNameValuePair("tag", compra_tag));
-        params.add(new BasicNameValuePair("usuari", "admin@admin.com")); //getComprador(context)
+        params.add(new BasicNameValuePair("usuari", getComprador(context)));
         params.add(new BasicNameValuePair("caixer", getEmail(context)));
         params.add(new BasicNameValuePair("productes", res));
         params.add(new BasicNameValuePair("preu_total", preu.toString()));
-
-        Log.d("usuari:","admin@admin.com");
-        Log.d("caixer:",getEmail(context));
-        Log.d("preu_total:",preu.toString());
-        Log.d("productes:",res);
 
         JSONObject json = jsonParser.getJSONFromUrl(webserviceURL, params);
 
@@ -249,11 +254,11 @@ public class UserFunctions {
             Uri dentifric = Uri.parse("android.resource://xyz.carlesllobet.pullmarket/" + R.mipmap.dentifric);
             Uri patates = Uri.parse("android.resource://xyz.carlesllobet.pullmarket/" + R.mipmap.patates);
             Uri cafe = Uri.parse("android.resource://xyz.carlesllobet.pullmarket/" + R.mipmap.cafe);
-            addProduct(context,5411786006905L, "Llet Puleva", "Sense lactosa", 1.14, 2, llet);
-            addProduct(context, 8413831003300L, "Xampú H&S", "Anticaspa", 5.99, 32, xampu);
-            addProduct(context, 3057067222903L, "Cafè Marcilla", "Barreja", 2.43, 2, cafe);
-            addProduct(context,8435173009116L, "Pasta Colgate", "Anticàries", 1.19, 33, dentifric);
-            addProduct(context,8427626000900L, "Patates Xip Lay's", "Gourmet cruixents", 2.01, 1, patates);
+            addProduct(context, 3057067222903L, "Llet Puleva", "Sense lactosa", 1.25, 2, llet);
+            addProduct(context, 4084500272088L, "Xampú H&S", "Anticaspa", 2.80, 32, xampu);
+            addProduct(context, 5411786006905L, "Cafè Marcilla", "Barreja", 2.29, 2, cafe);
+            addProduct(context,8410372152306L, "Pasta Colgate", "Anticàries", 1.55, 33, dentifric);
+            addProduct(context,410199000781L, "Patates Xip Lay's", "Gourmet cruixents", 1.99, 1, patates);
 
 
             //Guardem que s'han posat els valors inicials
@@ -262,5 +267,14 @@ public class UserFunctions {
             editor.commit();
             return false;
         } else return true;
+    }
+
+    public static double round(double value, int places) {
+        if (places < 0) throw new IllegalArgumentException();
+
+        long factor = (long) Math.pow(10, places);
+        value = value * factor;
+        long tmp = Math.round(value);
+        return (double) tmp / factor;
     }
 }
