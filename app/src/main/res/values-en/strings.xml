@@ -35,7 +35,7 @@
     <string name="tituloPassword">Change password</string>
     <string name="tituloRegister">Add user</string>
     <string name="tituloSettings">Settings</string>
-    <string name="email">Email:</string>
+    <string name="email">User:</string>
     <string name="welcome">Welcome to</string>
     <string name="btnClose">Close</string>
     <string name="spa">Spanish</string>

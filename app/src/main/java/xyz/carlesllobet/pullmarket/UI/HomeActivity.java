@@ -131,7 +131,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         }
 
         Llista list = Llista.getInstance();
-        if (list.getAllProducts().isEmpty()) {
+        if (list.getAllProducts().isEmpty() && list.getAllCants().isEmpty()) {
             llegirProductes();
         }
     }

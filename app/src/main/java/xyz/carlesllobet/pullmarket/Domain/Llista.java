@@ -25,12 +25,13 @@ public class Llista {
         return instancia;
     }
 
-    public void addProduct(Product p) {
-        if (llista.contains(p)){
+    public void addProduct(Product nou) {
+        Product p = containsInstance(llista,nou);
+        if (p!=null){
             Integer c = cantitats.get(llista.indexOf(p));
             cantitats.set(llista.indexOf(p),c+1);
         }else{
-            llista.add(p);
+            llista.add(nou);
             cantitats.add(1);
         }
     }
@@ -58,8 +59,20 @@ public class Llista {
     public Double getPreuTotal(){
         Double res = 0.00;
         for (int i = 0; i < llista.size(); ++i){
-            res += llista.get(i).getPreu();
+            for (int j = 0; j < cantitats.get(i); ++j){
+                res += llista.get(i).getPreu();
+            }
         }
         return res;
+    }
+
+    private static Product containsInstance(ArrayList<Product> l, Product n) {
+        Product ret = null;
+        for (Product p : l) {
+            if (n.getId().equals(p.getId())) {
+                ret = p;
+            }
+        }
+        return ret;
     }
 }

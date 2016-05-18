@@ -36,7 +36,7 @@
     <string name="tituloPassword">Canviar contrasenya</string>
     <string name="tituloRegister">Afegir usuari</string>
     <string name="tituloSettings">Preferències</string>
-    <string name="email">Correu electrònic:</string>
+    <string name="email">Usuari:</string>
     <string name="welcome">Benvingut a</string>
     <string name="btnClose">Tancar</string>
     <string name="spa">Castellà</string>

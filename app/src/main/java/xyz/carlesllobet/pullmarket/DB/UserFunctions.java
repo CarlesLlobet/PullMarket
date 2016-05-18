@@ -29,7 +29,7 @@ public class UserFunctions {
     //private static String registerURL = "http://192.168.69.18/servei_web";
     private static String webserviceURL = "http://pushmarket.carlesllobet.xyz/webservice/index.php";
 
-    private static String login_tag = "login";
+    private static String login_tag = "loginCaixer";
     private static String register_tag = "register";
     private static String products_tag = "products";
     private static String password_tag = "password";
@@ -48,7 +48,7 @@ public class UserFunctions {
         // Building Parameters
         List<NameValuePair> params = new ArrayList<NameValuePair>();
         params.add(new BasicNameValuePair("tag", login_tag));
-        params.add(new BasicNameValuePair("email", email));
+        params.add(new BasicNameValuePair("usuari", email));
         params.add(new BasicNameValuePair("password", password));
 
         JSONObject json = jsonParser.getJSONFromUrl(webserviceURL, params);
@@ -60,7 +60,7 @@ public class UserFunctions {
 
     public String getName (Context context){
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
-        String res = preferences.getString("name", "");
+        String res = preferences.getString("nom", "");
         return res;
     }
 
@@ -79,7 +79,7 @@ public class UserFunctions {
 
     public String getEmail(Context context) {
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
-        String res = preferences.getString("email", "");
+        String res = preferences.getString("usuari", "");
         return res;
     }
 
@@ -97,31 +97,7 @@ public class UserFunctions {
 
     public String getLastName(Context context) {
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
-        String res = preferences.getString("lastName", "");
-        return res;
-    }
-
-    public String getAge(Context context) {
-        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
-        String res = preferences.getString("edad", "");
-        return res;
-    }
-
-    public String getSex(Context context) {
-        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
-        String res = preferences.getString("sexe", "");
-        return res;
-    }
-
-    public String getCountry(Context context) {
-        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
-        String res = preferences.getString("pais", "");
-        return res;
-    }
-
-    public String getCity(Context context) {
-        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
-        String res = preferences.getString("ciutat", "");
+        String res = preferences.getString("cognoms", "");
         return res;
     }
 
@@ -160,7 +136,7 @@ public class UserFunctions {
      */
     public boolean isUserLoggedIn(Context context) {
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
-        if (preferences.contains("email")) return true;
+        if (preferences.contains("usuari")) return true;
         return false;
     }
 
@@ -172,7 +148,7 @@ public class UserFunctions {
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
         SharedPreferences.Editor editor = preferences.edit();
 
-        editor.remove("email");
+        editor.remove("usuari");
         editor.commit();
     }
 

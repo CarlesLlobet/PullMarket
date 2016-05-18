@@ -74,7 +74,6 @@ public class PreuActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(new Intent(getApplicationContext(), HomeActivity.class));
                 break;
             case R.id.cancelar:
-                Llista.getInstance().borrarLlista();
                 startActivity(new Intent(getApplicationContext(), HomeActivity.class));
                 break;
         }
@@ -125,9 +124,9 @@ public class PreuActivity extends AppCompatActivity implements View.OnClickListe
             // check for login response
             try {
                 if (json != null && json.getString(KEY_SUCCESS) != null) {
-
-
-                    JSONObject json_user = json.getJSONObject("compra");
+                    if (json.getString(KEY_SUCCESS).equals("1")) {
+                        JSONObject json_user = json.getJSONObject("compra");
+                    }
                 } else {
                     new AlertDialog.Builder(PreuActivity.this)
                             .setTitle(R.string.error)

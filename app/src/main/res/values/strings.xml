@@ -21,7 +21,7 @@
 
     <!-- Login Fields -->
     <string name="name">"Nombre:"</string>
-    <string name="email">Correo electronico:</string>
+    <string name="email">Usuario:</string>
     <string name="passwd">"Contraseña:"</string>
     <string name="error" translatable="false">"Error"</string>
     <string name="loginFail">"El usuario o contraseña introducidos no son correctos"</string>

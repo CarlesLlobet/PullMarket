@@ -52,7 +52,7 @@
                 android:id="@+id/loginEmail"
                 android:layout_centerVertical="true"
                 android:layout_centerHorizontal="true"
-                android:inputType="textEmailAddress"
+                android:inputType="text"
                 android:text=""
                 android:layout_gravity="center_horizontal"
                 android:textColor="@android:color/white" />

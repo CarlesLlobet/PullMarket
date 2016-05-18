@@ -37,14 +37,9 @@ public class LoginActivity extends AppCompatActivity {
 
     // JSON Response node names
     private static String KEY_SUCCESS = "success";
-    private static String KEY_NAME = "nombre";
-    private static String KEY_LAST_NAME = "nombre";
-    private static String KEY_EMAIL = "email";
-    private static String KEY_EDAD = "edad";
-    private static String KEY_COUNTRY = "pais";
-    private static String KEY_CITY = "ciudad";
-    private static String KEY_SEX = "sexo";
-
+    private static String KEY_NAME = "nom";
+    private static String KEY_LAST_NAME = "cognoms";
+    private static String KEY_EMAIL = "usuari";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -132,16 +127,12 @@ public class LoginActivity extends AppCompatActivity {
                     UserFunctions userFunction = new UserFunctions();
                     userFunction.logoutUser(getApplicationContext());
 
-                    JSONObject json_user = json.getJSONObject("user");
+                    JSONObject json_user = json.getJSONObject("caixer");
 
                     editor.putString(KEY_EMAIL, email);
                     editor.putString("password", password);
                     editor.putString(KEY_NAME, json_user.getString(KEY_NAME));
                     editor.putString(KEY_LAST_NAME, json_user.getString(KEY_LAST_NAME));
-                    editor.putString(KEY_EDAD, json_user.getString(KEY_EDAD));
-                    editor.putString(KEY_SEX, json_user.getString(KEY_SEX));
-                    editor.putString(KEY_COUNTRY, json_user.getString(KEY_COUNTRY));
-                    editor.putString(KEY_CITY, json_user.getString(KEY_CITY));
                     editor.commit();
 
                     // Launch Dashboard Screen
